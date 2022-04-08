@@ -1,0 +1,16 @@
+.nav{
+    height: 70px;
+    background-color: black;
+    color: white;
+    box-shadow: 0px 2px 10px 1px rgb(209, 207, 207);
+}
+.btn{
+    color: white;
+}
+.logo{
+    height: 70px;
+    width: 70px;
+}
+.logo-padding{
+    padding-left: 10px;
+}
