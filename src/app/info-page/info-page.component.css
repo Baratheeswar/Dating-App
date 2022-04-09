@@ -1,4 +1,4 @@
-.nav{
+/* .nav{
     height: 70px;
     background-color: black;
     color: white;
@@ -13,4 +13,37 @@
 }
 .logo-padding{
     padding-left: 10px;
+} */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#banner{
+    background: linear-gradient(180deg ,rgb(0 0 0 /0.5),#009688),url('../../assets/dating.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+}
+.logo{
+    width: 50px;
+    position: absolute;
+    top: 4%;
+    left: 10%;
+    border-radius: 50%;
+}
+.banner-text{
+    text-align: center;
+    color: white;
+    padding-top: 180px;
+}
+.banner-text h1{
+    font-size: 130px;
+    padding-bottom: 20px;
+    font-family: 'Kaushan Script', cursive;
+}
+.banner-text p{
+    font-size: 20px;
+    font-style: italic;
 }
