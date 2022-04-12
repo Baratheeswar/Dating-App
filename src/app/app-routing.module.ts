@@ -10,6 +10,9 @@ const routes: Routes = [
   { path:"login" , component: LoginComponent },
   { path:"" , component: InfoPageComponent },
   { path:"404" , component: PageNotFoundComponent },
+  { path:"datingapp" , 
+      loadChildren: () => import('./home/home.module').then(m=> m.HomeModule)
+  },
   { path:"**" , redirectTo: "/404" }
 ];
 

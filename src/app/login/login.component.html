@@ -6,27 +6,37 @@
         </div>
         <div class="login-right float-right w-50 h-100">
             <div class="form-width">
-                <h5 style="padding-bottom: 15px;">
+                <h5 class="loginTitle" >
                     Log in to your account
                 </h5>
                 <div>
-                    <form>
-                        <div class="form-group" style="padding-bottom: 10px;">
+                    <form [formGroup]="loginForm">
+                        <div class="form-group" style="padding-bottom: 15px;">
                             <label for="userName" style="padding-bottom: 5px;">
                                 User Name <span class="mandatory">*</span>
                             </label>
-                            <input type="text" class="form-control form-control-sm" name="" id="userName"
-                                placeholder="Enter Username">
+                            <input type="text" formControlName="username" class="form-control form-control-sm" name=""
+                                id="username" placeholder="Enter Username">
+                            <div *ngIf="!loginForm?.get('username')?.valid && loginForm?.get('username')?.touched">
+                                <span class="mandatory-field" *ngIf="loginForm?.get('username')?.errors?.['required']">
+                                   * User Name is required
+                                </span>
+                            </div>
                         </div>
-                        <div class="form-group" style="padding-bottom: 10px;">
+                        <div class="form-group" style="padding-bottom: 20px;">
                             <label for="password" style="padding-bottom: 5px;">
                                 Password <span class="mandatory">*</span>
                             </label>
-                            <input type="password" class="form-control form-control-sm" name="" id="password"
-                                placeholder="Enter password">
+                            <input type="password" formControlName="password" class="form-control form-control-sm"
+                                name="" id="password" placeholder="Enter password">
+                            <div *ngIf="!loginForm?.get('password')?.valid && loginForm?.get('password')?.touched">
+                                <span class="mandatory-field" *ngIf="loginForm?.get('password')?.errors?.['required']">
+                                   * Password is required
+                                </span>
+                            </div>
                         </div>
-                        <div class="form-group" style="padding-bottom: 15px;">
-                            <span>
+                        <div class="form-group login-feature" style="padding-bottom: 15px;">
+                            <span class="">
                                 <label for="rememberMe">
                                     <input type="checkbox" name="" id="rememberMe">
                                     Remember me
@@ -37,18 +47,20 @@
                             </span>
                         </div>
                     </form>
-                    <div class="d-flex justify-content-center w-100" style="padding-bottom: 10px;">
-                        <button class="btn btn-primary btn-sm login-btn" style="padding: 5px;">
+                    <div class="d-flex justify-content-center w-100" style="padding-bottom: 15px;">
+                        <button class="btn btn-primary btn-sm login-btn" style="padding: 5px;"
+                            (click)="login()"
+                            [disabled]="!loginForm.valid">
                             Login
                         </button>
                     </div>
                     <div>
-                        <span>
-                            <h6>Don't have an account?
-                               <a href="">
-                                    Sign Up
-                               </a> 
-                            </h6>
+                        <span class="signup">
+                            <span>Don't have an account?
+                            </span>                                
+                            <a href="./register">
+                                Sign Up
+                            </a>
                         </span>
                     </div>
                 </div>
