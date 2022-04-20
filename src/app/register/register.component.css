@@ -1,0 +1,97 @@
+body{
+    background: linear-gradient(180deg ,rgb(0 0 0 /0.5),#009688),url('../../assets/dating.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+    padding-top: 150px !important;   
+
+}
+
+body .container .row{
+}
+.register-left{
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+.register-left p{
+    padding: 20px 20px 0;
+}
+
+.register-left .btn-primary{
+    border-radius: 1.5rem;
+    border: none;
+    width: 120px;
+    background: #f8f8f8;
+    font-weight: 600;
+    color: #555;
+    margin-top: 20px;
+    padding: 10px;
+}
+.register-left .btn-primary:hover{
+    background: #000;
+}
+
+.register-right{
+    border: none;
+    background: rgb(255 255 255 /0.6);
+    border-top-left-radius: 10% 50%;
+    border-bottom-left-radius: 10% 50%;
+    padding: 50px;
+}
+
+.register-left img{
+    margin-top: 60px;
+    margin-bottom: 18px;
+    width: 80px;
+    animation: mover 1s infinite alternate;
+}
+
+.form-group{
+    padding-bottom: 15px;
+}
+
+.register-right h2{
+    text-align: center;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.register-form{
+    padding: 30px;
+}
+
+.register-right .btn-primary{
+    float: right;
+    border-radius: 1.5rem;
+    border: none;
+    width: 120px;
+    background: #ff9800;
+    font-weight: 600;
+    color: #555;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.register-right .btn-primary:hover{
+    background: #ff5722;
+
+}
+
+@keyframes mover {
+    0%{transform: translateY(0);}
+    100%{transform: translateY(100);}
+}
+
+@media screen and (max-width: 770px) {
+    body{
+        min-height: 1050px !important;
+    }
+}
+
+@media screen and (max-height: 700px) {
+    body{
+        min-height: 800px;
+    }
+}
