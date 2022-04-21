@@ -3,12 +3,10 @@ body{
     background-size: cover;
     background-position: center;
     height: 100%;
-    padding-top: 150px !important;   
+    padding-top: 100px !important;   
 
 }
 
-body .container .row{
-}
 .register-left{
     text-align: center;
     color: white;
@@ -16,7 +14,7 @@ body .container .row{
 }
 
 .register-left p{
-    padding: 20px 20px 0;
+    padding: 10px 10px 0;
 }
 
 .register-left .btn-primary{
@@ -26,7 +24,7 @@ body .container .row{
     background: #f8f8f8;
     font-weight: 600;
     color: #555;
-    margin-top: 20px;
+    /* margin-top: 10px; */
     padding: 10px;
 }
 .register-left .btn-primary:hover{
@@ -81,14 +79,20 @@ body .container .row{
 
 @keyframes mover {
     0%{transform: translateY(0);}
-    100%{transform: translateY(100);}
+    100%{transform: translateY(-20px);}
 }
 
 @media screen and (max-width: 770px) {
-    body{
-        min-height: 1050px !important;
+
+    .register-left{
+        display: none;
+    }
+
+    .register-right{
+        border-radius: 0px !important;
     }
 }
+
 
 @media screen and (max-height: 700px) {
     body{
