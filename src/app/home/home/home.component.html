@@ -1,2 +1,63 @@
+<div class="side-nav-container">
+    <aside class="side-nav">
+        <div class="sidebar" [class]="!sideMenuToggle? 'half-menu': 'full-menu'">
+            <div class="top">
+                <span *ngIf="sideMenuToggle" class="logo d-flex" routerLink="../datingapp">
+                    <div class="logo-padding">
+                        <img class="logo-img" src="../../../assets/pngegg.png" alt="">
+                    </div>
+                    <h5 class="logo-title">Dating Spot</h5>
+                </span>
+                <div class="menu" id="menu-btn">
+                    <button mat-icon-button (click)="menuToggle()">
+                        <span class="material-icons-round">menu</span>
+                        <!-- <span *ngIf="!sideMenuToggle" class="material-icons-round">close</span> -->
+                    </button>
+                </div>
+            </div>
 
-<app-dashboard></app-dashboard>
+            <a routerLink="dashboard" routerLinkActive="active">
+                <span class="material-icons-outlined">dashboard</span>
+                <h4 class="custom-size">
+                    Dashboard
+                </h4>
+            </a>
+            <a routerLink="discover" routerLinkActive="active">
+                <span class="material-icons-outlined">explore</span>
+                <h4 class="custom-size">
+                    Discover
+                </h4>
+            </a>
+            <a routerLink="messages" routerLinkActive="active">
+                <span class="material-icons-round">mail_outline</span>
+                <h4 class="custom-size">
+                    Messages
+                </h4>
+                <div class="message-count">
+                    26
+                </div>
+            </a>
+            <a routerLink="chat-request" routerLinkActive="active">
+                <span class="material-icons-round">chat_bubble_outline</span>
+                <h4 class="custom-size">
+                    Chat Request
+                </h4>
+            </a>
+            <a routerLink="profile" routerLinkActive="active">
+                <span class="material-icons-round">person_outline</span>
+                <h4 class="custom-size">
+                    Profile
+                </h4>
+            </a>
+            <a href="">
+                <span class="material-icons-round">logout</span>
+                <h4 class="custom-size">
+                    Logout
+                </h4>
+            </a>
+        </div>
+    </aside>
+    <span>
+        <router-outlet></router-outlet>
+    </span>
+</div>

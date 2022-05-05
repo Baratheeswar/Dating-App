@@ -1,9 +1,19 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router'
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-    {path:'' , component: HomeComponent}
+    {
+        path: ''
+        , component: HomeComponent
+        , children: [
+            {
+                path: 'dashboard'
+                ,component: DashboardComponent
+            }
+        ]
+    }
 ];
 
 @NgModule({
@@ -12,4 +22,3 @@ const routes: Routes = [
 })
 
 export class HomeRoutingModule { }
-  

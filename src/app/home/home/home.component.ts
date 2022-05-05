@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  userThemePreference: boolean = false;
+  sideMenuToggle: boolean = false;
+
+  constructor(private router: Router) { }
 
   ngOnInit() {
+  }
+
+  logout(){
+    this.router.navigate(['../login']);
+  }
+
+  themeToggle(){
+    this.userThemePreference = !this.userThemePreference
+  }
+
+  menuToggle(){
+    this.sideMenuToggle = !this.sideMenuToggle;
   }
 
 }

@@ -1,21 +1,12 @@
-<body>
-  <div class="container">
-    <div class="card-padding">
-      <div class="card">
-        <img class="card-img-top" src="../../../assets/dating profile-1.jpg" alt="">
-        <div class="card-body">
-
-        </div>
-      </div>
-    </div>
-
-    <div class="card-padding">
-      <div class="card">
-        <img class="card-img-top" src="../../../assets/dating profile-1.jpg" alt="">
-        <div class="card-body">
-
-        </div>
-      </div>
-    </div>
-  </div>
-</body>
+<div id="chart">
+    <apx-chart
+      [series]="chartOptions.series"
+      [chart]="chartOptions.chart"
+      [xaxis]="chartOptions.xaxis"
+      [dataLabels]="chartOptions.dataLabels"
+      [grid]="chartOptions.grid"
+      [stroke]="chartOptions.stroke"
+      [title]="chartOptions.title"
+    ></apx-chart>
+</div>
+  

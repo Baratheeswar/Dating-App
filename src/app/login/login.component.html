@@ -1,5 +1,5 @@
 <div class="h-100 w-100">
-    <section class="h-100 w-100">
+    <section class="login h-100 w-100">
         <div class="login-left">
             <!-- <img src="../../assets/logo.jpg" alt=""> -->
             <img src="../../assets/dating.jpg" alt="">
@@ -18,7 +18,7 @@
                             <input type="text" formControlName="username" class="form-control form-control-sm" name=""
                                 id="username" placeholder="Enter Username">
                             <div *ngIf="!loginForm?.get('username')?.valid && loginForm?.get('username')?.touched">
-                                <span class="mandatory-field" *ngIf="loginForm?.get('username')?.errors?.['required']">
+                                <span class="error-field" *ngIf="loginForm?.get('username')?.errors?.['required']">
                                    * User Name is required
                                 </span>
                             </div>
@@ -30,19 +30,19 @@
                             <input type="password" formControlName="password" class="form-control form-control-sm"
                                 name="" id="password" placeholder="Enter password">
                             <div *ngIf="!loginForm?.get('password')?.valid && loginForm?.get('password')?.touched">
-                                <span class="mandatory-field" *ngIf="loginForm?.get('password')?.errors?.['required']">
+                                <span class="error-field" *ngIf="loginForm?.get('password')?.errors?.['required']">
                                    * Password is required
                                 </span>
                             </div>
                         </div>
                         <div class="form-group login-feature" style="padding-bottom: 15px;">
-                            <span class="">
+                            <!-- <span class="">
                                 <label for="rememberMe">
                                     <input type="checkbox" name="" id="rememberMe">
                                     Remember me
                                 </label>
-                            </span>
-                            <span style="float: right;">
+                            </span> -->
+                            <span>
                                 <a href="">Forgot password?</a>
                             </span>
                         </div>

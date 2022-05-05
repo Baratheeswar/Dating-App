@@ -1,7 +1,7 @@
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
-<body>
+<body class="register">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -14,12 +14,12 @@
                     </div>
                     <div class="col-md-1 register-padding"></div>
                     <div class="col-md-7 register-right">
-                        <h2>Register here</h2>
+                        <h2>Sign Up</h2>
                         <div class="register-form" [formGroup]="registerForm">
                             <div class="form-group">
                                 <input type="text" class="form-control" placeholder="Name" formControlName = "name">
                                 <div *ngIf="!registerForm?.get('name')?.valid && registerForm?.get('name')?.touched">
-                                    <span class="mandatory-field" *ngIf="registerForm?.get('name')?.errors?.['required']">
+                                    <span class="error-field" *ngIf="registerForm?.get('name')?.errors?.['required']">
                                        * Name is required
                                     </span>
                                 </div>
@@ -27,7 +27,7 @@
                             <div class="form-group">
                                 <input type="text" class="form-control" placeholder="Username" formControlName = "username">
                                 <div *ngIf="!registerForm?.get('username')?.valid && registerForm?.get('username')?.touched">
-                                    <span class="mandatory-field" *ngIf="registerForm?.get('username')?.errors?.['required']">
+                                    <span class="error-field" *ngIf="registerForm?.get('username')?.errors?.['required']">
                                        * User Name is required
                                     </span>
                                 </div>
@@ -35,7 +35,7 @@
                             <div class="form-group">
                                 <input type="email" class="form-control" placeholder="Email" formControlName = "email">
                                 <div *ngIf="!registerForm?.get('email')?.valid && registerForm?.get('email')?.touched">
-                                    <span class="mandatory-field" *ngIf="registerForm?.get('email')?.errors?.['required']">
+                                    <span class="error-field" *ngIf="registerForm?.get('email')?.errors?.['required']">
                                        * Email is required
                                     </span>
                                 </div>
@@ -43,25 +43,25 @@
                             <div class="form-group">
                                 <input type="password" class="form-control" placeholder="Password" formControlName = "password">
                                 <div *ngIf="!registerForm?.get('password')?.valid && registerForm?.get('password')?.touched">
-                                    <span class="mandatory-field" *ngIf="registerForm?.get('password')?.errors?.['required']">
+                                    <span class="error-field" *ngIf="registerForm?.get('password')?.errors?.['required']">
                                        * Password is required
                                     </span>
                                 </div>
                             </div>
-                            <div class="form-group" style="padding-bottom: 25px;">
+                            <div class="form-group confirm-password">
                                 <input type="password" class="form-control" placeholder="Retype your Password" formControlName = "confirmpassword">
-                                <span class="float-right" style="white-space: nowrap;">
+                                <div class="multiple-error-msg">
                                    <div *ngIf="!registerForm?.get('confirmpassword')?.valid && registerForm?.get('confirmpassword')?.touched">
-                                        <span class="mandatory-field" *ngIf="registerForm?.get('confirmpassword')?.errors?.['required']">
+                                        <span class="error-field" *ngIf="registerForm?.get('confirmpassword')?.errors?.['required']">
                                         * Password is required
                                         </span>
                                     </div>
-                                    <div *ngIf="registerForm?.get('confirmpassword')?.touched || registerForm?.get('password')?.touched">
-                                        <span class="mandatory-field" *ngIf="registerForm?.get('confirmpassword')?.value != registerForm?.get('password')?.value">
+                                    <div *ngIf="registerForm?.get('confirmpassword')?.value &&registerForm?.get('confirmpassword')?.touched || registerForm?.get('password')?.touched">
+                                        <span class="error-field" *ngIf="registerForm?.get('confirmpassword')?.value != registerForm?.get('password')?.value">
                                             * Password doesn't match with the confirmation password.
                                         </span>
                                     </div>
-                                </span>
+                                </div>
                             </div>
                             <button type="button" class="btn btn-primary" [disabled]="registerForm?.invalid" (click)="registerUser()">Register</button>
                         </div>

@@ -1,0 +1,11 @@
+.custom-size{
+    margin: 0 !important;
+    display: contents;
+}
+
+.logo-title{
+    white-space: nowrap !important;
+    text-overflow: ellipsis !important;
+    max-width: 120px;
+    overflow: hidden;
+}
