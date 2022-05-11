@@ -8,8 +8,42 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  userThemePreference: boolean = false;
   sideMenuToggle: boolean = false;
+  userThemePreference: boolean = false;
+  sideMenuArray: any = [
+    {
+      menuName: 'Dashboard',
+      menuIcon: 'dashboard',
+      routingUrl: 'dashboard'
+    },
+    {
+      menuName: 'Discover',
+      menuIcon: 'explore',
+      routingUrl: 'discover'
+    },
+    {
+      menuName: 'Messages',
+      menuIcon: 'mail_outline',
+      routingUrl: 'messages',
+      notificationCount: 4
+    },
+    {
+      menuName: 'Chat Request',
+      menuIcon: 'chat_bubble_outline',
+      routingUrl: 'chat-request',
+      notificationCount: 10
+    },
+    {
+      menuName: 'Profile',
+      menuIcon: 'person_outline',
+      routingUrl: 'profile'
+    },
+    {
+      menuName: 'Logout',
+      menuIcon: 'logout',
+      routingUrl: ''
+    }
+  ]
 
   constructor(private router: Router) { }
 
@@ -24,7 +58,9 @@ export class HomeComponent implements OnInit {
     this.userThemePreference = !this.userThemePreference
   }
 
-  menuToggle(){
+  menuToggle() {
+    // let sidebar = document.querySelector(".sidebar") as HTMLDivElement ;
+    // sidebar.classList.toggle("active");
     this.sideMenuToggle = !this.sideMenuToggle;
   }
 

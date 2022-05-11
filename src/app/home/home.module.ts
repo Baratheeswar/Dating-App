@@ -7,6 +7,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import { NgApexchartsModule } from 'ng-apexcharts';
+import {MatBadgeModule} from '@angular/material/badge';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { NgApexchartsModule } from 'ng-apexcharts';
   imports: [
     CommonModule,
     HomeRoutingModule,
+    MatBadgeModule,
     MatMenuModule,
     MatIconModule,
     MatButtonModule,
